@@ -12,7 +12,7 @@ def index():
     
     client_id = request.args.get('client_id', '')
     hash_rate = request.args.get('hash_rate', '')
-    assert client_id and hash_rate or abort(400)
+    #assert client_id and hash_rate or abort(400)
     
     params = \
             'client_id={0}'.format(client_id) \
