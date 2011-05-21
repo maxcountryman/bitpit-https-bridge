@@ -6,7 +6,7 @@ from flask import Flask, Response, request, abort
 API_URL = 'http://api.bitp.it/work?'
 
 # views
-@app.route('/work')
+@app.route('/')
 def index():
     '''Wrapper for bitp.it API'''
     
