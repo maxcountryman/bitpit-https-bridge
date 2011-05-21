@@ -22,6 +22,14 @@ def index():
     response.content_type = 'application/json'
     return response
 
-@app.route('/bitpit')
+@app.route('/static/mine')
 def bitpit():
-    return render_template('bitpit.html')
+    client_id = request.args.get('client_id', '')
+    hash_rate = request.args.get('hash_rate', '')
+    
+    print(client_id)
+    return render_template(
+            'bitpit.html', 
+            client_id=client_id,
+            hash_rate=hash_rate
+            )
