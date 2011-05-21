@@ -1,7 +1,7 @@
 import urllib
 
 from httpstobitpit import app
-from flask import Flask, make_response, request, abort 
+from flask import Flask, render_template, make_response, request, abort 
 
 API_URL = 'http://api.bitp.it/work?'
 
@@ -23,3 +23,7 @@ def index():
     response = make_response(urllib.urlopen(url).read())
     response.content_type = 'application/json'
     return response
+
+@app.route('/bitpit')
+def bitpit():
+    return render_template('bitpit.html')
