@@ -6,8 +6,9 @@ from flask import Flask, render_template, make_response, request, abort
 # views
 @app.route('/bitcoin/work')
 def work():
-    '''Formats a URL based on client_id and hash_rate, ignoring them if they
-    have no value. Then returns the result of that URL as a JSON object.'''
+    '''Formats a URL based on `client_id` and `hash_rate`, ignoring them if 
+    they have no value. Then returns the result of that URL as a JSON object.
+    '''
     
     url = 'http://api.bitp.it/work?'
     
