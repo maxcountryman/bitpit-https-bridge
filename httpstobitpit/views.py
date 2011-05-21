@@ -1,7 +1,7 @@
 import urllib
 
 from httpstobitpit import app
-from flask import Flask, Response, request, abort 
+from flask import Flask, make_response, request, abort 
 
 API_URL = 'http://api.bitp.it/work?'
 
@@ -20,6 +20,6 @@ def index():
             'hash_rate={0}'.format(hash_rate)
     url = API_URL + params
     
-    response = urllib.urlopen(url).read()
-    Response.content_type = 'application/json'
-    return Response(response)
+    response = make_response(urllib.urlopen(url).read())
+    response.content_type = 'application/json'
+    return response
